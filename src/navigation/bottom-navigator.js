@@ -12,10 +12,10 @@ import {
 import HomeScreen from "../Screens/home";
 
 import ProfileScreen from "../Screens/profile/profile";
-import FeedbackScreen from "../Screens/profile/submit";
-import SubmitScreen from "../Screens/profile/settings";
-import Terms_component from "../Screens/profile/terms";
-import PrivacyScreen from "../Screens/profile/privacy";
+// import FeedbackScreen from "../Screens/profile/submit";
+// import SubmitScreen from "../Screens/profile/settings";
+// import Terms_component from "../Screens/profile/terms";
+// import PrivacyScreen from "../Screens/profile/privacy";
 
 
 const Tab = createBottomTabNavigator();
@@ -55,7 +55,7 @@ export default function MyTabs() {
     <Tab.Navigator screenOptions={{ headerShown: false }} >
       <Tab.Screen  name="home" component={HomeScreen} />
       <Tab.Screen name="settings" component={SettingsScreen} />
-      {/* <Tab.Screen name="profile" component={Profile_component} /> */}
+      <Tab.Screen name="profile" component={Profile_component} />
     </Tab.Navigator>
   );
 }

@@ -9,9 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Accessory, Avatar } from "react-native-elements";
 
-import store_redux_thunk from "../../asyncStorage/store";
 import {colors} from "../../components/export";
 
 
@@ -54,58 +52,13 @@ const ProfileScreen = (props) => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [imgLink, setImgLink] = useState(AvatarPlaceholder);
+  const [imgLink, setImgLink] = useState();
 
   const navigation = useNavigation();
-  const AvatarPlaceholder =
-    "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg";
-  // make user uid as key
-  var user = store_redux_thunk.getState().userToken;
 
 
 
 
-  const signout = () => {
-    store_redux_thunk.dispatch((dispatch) => {
-      dispatch({ type: "showload" });
-    });
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        console.log("logged out");
-        store_redux_thunk.dispatch((dispatch, getState) => {
-          dispatch({
-            type: SIGN_OUT,
-          });
-          // console.log(getState());
-        });
-      })
-      .catch((error) => {
-        console.log("signout error ", error);
-      });
-  };
-
-  const deleteAccount = () => {
-    var user = firebase.auth().currentUser;
-
-    store_redux_thunk.dispatch((dispatch) => {
-      dispatch({ type: "showload" });
-    });
-    user
-      .delete()
-      .then(function () {
-        console.log("account deleted");
-        store_redux_thunk.dispatch((dispatch) => {
-          dispatch({
-            type: SIGN_OUT,
-          });
-        });
-      })
-      .catch(function (error) {
-        console.log("account delete error ", error);
-      });
-  };
 
   return (
     <View style={styles.screen}>
@@ -120,7 +73,7 @@ const ProfileScreen = (props) => {
         </View>
 
         <View style={styles.profile}>
-          <Avatar
+          {/* <Avatar
             size={140}
             rounded
             source={{
@@ -128,7 +81,7 @@ const ProfileScreen = (props) => {
             }}
           >
             <Accessory />
-          </Avatar>
+          </Avatar> */}
 
           <Text
             style={{ fontSize: 18, fontWeight: "bold", color: colors.primary2 }}
