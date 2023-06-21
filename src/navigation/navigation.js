@@ -7,6 +7,8 @@ import { auth , onAuthStateChanged   } from "../firebase/firebase-utilities";
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoading } from '../state-managment/reducers';
 
+import MyTabs from './bottom-navigator';
+
 import Loading_Screen from '../../loading';
 
 import Login from "../Screens/login";
@@ -42,7 +44,7 @@ const Stack = createStackNavigator();
  function AppScreens() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="homeScreen" component={HomeScreen} />
+      <Stack.Screen name="myTabs" component={MyTabs} />
       <Stack.Screen name="rides_screen" component={Rides_screen} />
       <Stack.Screen name="transport_screen2" component={Transport_screen2} />
       <Stack.Screen name="chatListScreen" component={ChatListScreen} />
