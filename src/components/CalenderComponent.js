@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+import { View, Text } from "react-native";
+import { Calendar, CalendarList, Agenda } from "react-native-calendars";
+import colors from "./colors";
+
+const CalenderComponent = (props) => {
+
+  const getMarkedDate = () => {
+    return new Date().toISOString().substring(0, 10);
+  };
+
+  const [markedDate, nextOne] = useState(getMarkedDate(null));
+   // this is added if user doesn't happen to select any value
+   props.getDate(markedDate);
+  return (
+    <View style={{
+     
+      
+    }}>
+
+      <CalendarList
+        onDayPress={(day) => {
+          nextOne(day.dateString),
+          props.getDate(day.dateString);
+        }}
+        style={{
+          
+          height: '100%',
+        }}
+        
+        horizontal={true}
+        // Max amount of months allowed to scroll to the past. Default = 50
+        pastScrollRange={0}
+        // Max amount of months allowed to scroll to the future. Default = 50
+        futureScrollRange={12}
+        // Enable or disable scrolling of calendar list
+        scrollEnabled={true}
+        // Enable or disable vertical scroll indicator. Default = false
+        showScrollIndicator={true}
+        minDate={getMarkedDate()}
+        markedDates={{
+          [markedDate]: {
+            selected: true,
+            marked: true,
+            selectedColor: colors.primary2,
+          },
+        }}
+        theme={{
+          backgroundColor: 'black',
+          calendarBackground: '#ffffff',
+          textMonthFontWeight: 'bold',
+          monthTextColor: colors.primary2,
+          textMonthFontSize: 22,
+          textDayFontSize: 15,
+        }}
+      />
+     
+    </View>
+  );
+};
+
+export default CalenderComponent;

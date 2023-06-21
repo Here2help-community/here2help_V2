@@ -1,0 +1,44 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "silenteyesoncode",
+      "name": "silenteyesoncode",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46851135?v=4",
+      "profile": "https://github.com/silenteyesoncode",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "nandini25-ag",
+      "name": "nandini agarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64517220?v=4",
+      "profile": "https://github.com/nandini25-ag",
+      "contributions": [
+        "infra",
+        "code"
+      ]
+    },
+    {
+      "login": "mtalhabaig3",
+      "name": "Muhammad Talha Baig",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57634631?v=4",
+      "profile": "https://github.com/mtalhabaig3",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "openMind",
+  "projectOwner": "The-Unleashed-Club"
+}
