@@ -16,7 +16,7 @@ import ProfileScreen from "../Screens/profile/profile";
 // import SubmitScreen from "../Screens/profile/settings";
 // import Terms_component from "../Screens/profile/terms";
 // import PrivacyScreen from "../Screens/profile/privacy";
-
+import { HomeIcon,HistoryIcon,ChatIcon,ProfileIcon } from "../../assets/Svg";
 
 const Tab = createBottomTabNavigator();
 const ScreenConstant = createStackNavigator();
@@ -53,9 +53,38 @@ function SettingsScreen() {
 export default function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
-      <Tab.Screen  name="home" component={HomeScreen} />
-      <Tab.Screen name="settings" component={SettingsScreen} />
-      <Tab.Screen name="profile" component={Profile_component} />
+
+      
+<Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => <HomeIcon color={color} size={size} />,
+        }}
+      />
+      <Tab.Screen
+        name="History"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => <HistoryIcon color={color} size={size} />,
+        }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => <ChatIcon color={color} size={size} />,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => <ProfileIcon color={color} size={size} />,
+        }}
+      />
+       
+      
     </Tab.Navigator>
   );
 }
