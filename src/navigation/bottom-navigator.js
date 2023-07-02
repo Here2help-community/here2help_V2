@@ -69,6 +69,8 @@ export default function MyTabs() {
           tabBarIcon: ({ color, size }) => <HistoryIcon color={color} size={size} />,
         }}
       />
+
+      
       <Tab.Screen
         name="Chat"
         component={SettingsScreen}
